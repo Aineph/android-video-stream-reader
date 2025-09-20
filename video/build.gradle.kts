@@ -44,6 +44,13 @@ dependencies {
     implementation("org.bytedeco:ffmpeg:7.1-1.5.11:android-arm64")
     implementation("org.bytedeco:ffmpeg:7.1-1.5.11:android-x86_64")
 
+    implementation("androidx.media3:media3-exoplayer:1.8.0")
+    implementation("androidx.media3:media3-exoplayer-dash:1.8.0")
+    implementation("androidx.media3:media3-ui:1.8.0")
+    implementation("androidx.media3:media3-ui-compose:1.8.0")
+
+    implementation("androidx.media3:media3-effect:1.8.0")
+
     testImplementation(libs.junit)
 
     androidTestImplementation(libs.androidx.junit)
