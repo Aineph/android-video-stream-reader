@@ -38,6 +38,12 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
 
+    implementation("org.bytedeco:javacpp:1.5.11")
+    implementation("org.bytedeco:javacv:1.5.11")
+    implementation("org.bytedeco:ffmpeg:7.1-1.5.11")
+    implementation("org.bytedeco:ffmpeg:7.1-1.5.11:android-arm64")
+    implementation("org.bytedeco:ffmpeg:7.1-1.5.11:android-x86_64")
+
     testImplementation(libs.junit)
 
     androidTestImplementation(libs.androidx.junit)
