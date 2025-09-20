@@ -35,6 +35,7 @@ import androidx.core.graphics.createBitmap
 import com.nicolasfez.sandbox.ui.theme.SandboxTheme
 import com.nicolasfez.video.VideoStreamReader
 import androidx.core.net.toUri
+import com.nicolasfez.video.FFmpegVideoStreamReader
 import com.nicolasfez.video.VideoObserver
 import java.io.File
 
@@ -42,7 +43,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val videoStreamReader: VideoStreamReader = // To be defined
+        val videoStreamReader: VideoStreamReader = FFmpegVideoStreamReader()
 
         enableEdgeToEdge()
         setContent {
@@ -63,7 +64,6 @@ class MainActivity : ComponentActivity() {
 
                                     val videoObserver = object : VideoObserver {
                                         override fun onFrameReceived(bitmap: Bitmap) {
-                                            Log.d("MainActivity", "onFrameReceived")
                                             imageBitmap.value = bitmap.asImageBitmap()
                                         }
                                     }
