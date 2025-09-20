@@ -6,10 +6,10 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.provider.Settings
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.annotation.OptIn
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -36,14 +36,18 @@ import com.nicolasfez.sandbox.ui.theme.SandboxTheme
 import com.nicolasfez.video.VideoStreamReader
 import androidx.core.net.toUri
 import com.nicolasfez.video.FFmpegVideoStreamReader
+// import com.nicolasfez.video.FFmpegVideoStreamReader
+import com.nicolasfez.video.Media3VideoStreamReader
 import com.nicolasfez.video.VideoObserver
 import java.io.File
 
 class MainActivity : ComponentActivity() {
+    @OptIn(androidx.media3.common.util.UnstableApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val videoStreamReader: VideoStreamReader = FFmpegVideoStreamReader()
+        // val videoStreamReader: VideoStreamReader = FFmpegVideoStreamReader(baseContext)
+        val videoStreamReader: VideoStreamReader = Media3VideoStreamReader(baseContext)
 
         enableEdgeToEdge()
         setContent {
