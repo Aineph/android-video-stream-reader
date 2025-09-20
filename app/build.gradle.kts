@@ -54,6 +54,8 @@ dependencies {
 
     implementation(project(":video"))
 
+    implementation("androidx.media3:media3-common-ktx:1.8.0")
+
     testImplementation(libs.junit)
 
     androidTestImplementation(libs.androidx.junit)

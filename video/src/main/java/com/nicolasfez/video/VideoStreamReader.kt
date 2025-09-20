@@ -2,6 +2,7 @@ package com.nicolasfez.video
 
 import android.graphics.Bitmap
 import android.net.Uri
+import androidx.core.graphics.createBitmap
 
 abstract class VideoStreamReader {
 
